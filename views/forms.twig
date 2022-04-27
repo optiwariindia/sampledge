@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	{% include "comp/head.twig" %}
+	<body class="font-montserrat">
+		<div class="page-loader-wrapper">
+			<div class="loader"></div>
+		</div>
+
+		<div id="main_content">
+			{% include "comp/shortcuts.twig" %}
+			{% include "comp/config.twig" %}
+			{% include "comp/userinfo.twig" %}
+			{% include "comp/sidebar.twig" %}
+
+
+			<div class="page">
+				{% include "comp/topnav.twig" %}
+				<div class="section-body mt-3">
+					<div class="container-fluid">
+						{% if page is defined %}
+							{% include "page/"~page.theme %}
+						{% endif %}
+					</div>
+				</div>
+				<div class="section-body">
+					{% include "comp/footer.twig" %}
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/bundles/lib.vendor.bundle.js"></script>
+		<script src="/assets/bundles/apexcharts.bundle.js"></script>
+		<script src="/assets/bundles/counterup.bundle.js"></script>
+		<script src="/assets/bundles/knobjs.bundle.js"></script>
+		<script src="/assets/bundles/c3.bundle.js"></script>
+		<script src="/assets/js/core.js"></script>
+		<script src="/assets/js/page/project-index.js"></script>
+
+	</body>
+</html>

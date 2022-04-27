@@ -1,0 +1,50 @@
+{% import _self as form %}
+{% macro tab(param) %}
+	<div class="tab-pane" id="{{param.id}}">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">{{param.title}}</h3>
+			</div>
+			<div class="card-body">
+				<div class="row clearfix">
+					{% for filed in param.form %}
+						{{form.field(filed)}}
+					{% endfor %}
+					<div class="col-sm-12 m-t-20 text-right">
+						<button type="button" class="btn btn-primary">SAVE</button>
+						<button type="button" class="btn btn-default">CANCEL</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endmacro %}
+{% macro field(param) %}
+	{% if param.type == "checkbox" %}
+		<div class="{{param.class}}">
+			<div class="form-group">
+				<input type="{{param.type}}" class="form-control" value="{{param.value}}" id="{{param.name}}" name="{{param.name}}" {{param.validations|raw}}>
+				<label for="{{param.name}}">{{param.label}}</label>
+			</div>
+		</div>
+	{% elseif param.type == "select" %}
+		<div class="{{param.class}}">
+			<div class="form-group">
+				<label for="{{param.name}}">{{param.label}}</label>
+				<select name="{{param.name}}" class='form-control' >
+					{% for option in param.options %}
+						<option value="{{option}}">{{option}}</option>
+					{% endfor %}
+				</select>
+				{# <input type="{{param.type}}" class="form-control" value="{{param.value}}" id="{{param.name}}" name="{{param.name}}" {{param.validations|raw}}> #}
+			</div>
+		</div>
+	{% else %}
+		<div class="{{param.class}}">
+			<div class="form-group">
+				<label for="{{param.name}}">{{param.label}}</label>
+				<input type="{{param.type}}" class="form-control" value="{{param.value}}" id="{{param.name}}" name="{{param.name}}" {{param.validations|raw}}>
+			</div>
+		</div>
+	{% endif %}
+{% endmacro %}

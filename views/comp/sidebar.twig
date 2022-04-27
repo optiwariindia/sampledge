@@ -1,0 +1,39 @@
+<div id="left-sidebar" class="sidebar ">
+	<h5 class="brand-name">{{project.name}}
+		<a href="javascript:void(0)" class="menu_option float-right">
+			<i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i>
+		</a>
+	</h5>
+	<nav id="left-sidebar-nav" class="sidebar-nav">
+		<ul class="metismenu">
+			{% for item in project.sidenav %}
+				<li class="{{item.class}}">
+					{% if item.link is defined %}
+						<a href="{{item.link}}" {% if item.submenu is defined %} class='dropdown has-arrow arrow-c' {% endif %}>
+							{% if item.icon is defined %}
+								<i class="{{item.icon}}"></i>
+							{% endif %}
+							<span>{{item.name}}</span>
+						</a>
+						{% if item.submenu is defined %}
+							<ul>
+								{% for mnuitem in item.submenu %}
+									<li>
+										<a href="{{mnuitem.link}}">
+											{% if mnuitem.icon is defined %}
+												<i class="{{mnuitem.icon}}"></i>
+											{% endif %}
+											<span>{{mnuitem.name}}</span>
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					{% else %}
+						{{item.name}}
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</div>

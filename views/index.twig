@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	{% include "comp/head.twig" %}
+	<body class="font-montserrat">
+		<div class="page-loader-wrapper">
+			<div class="loader"></div>
+		</div>
+
+		<div id="main_content">
+            {% include "comp/shortcuts.twig" %}
+			{% include "comp/config.twig" %}
+			{% include "comp/userinfo.twig" %}
+            {% include "comp/sidebar.twig" %}
+			
+
+			<div class="page">
+				{% include "comp/topnav.twig" %}
+				<div class="section-body mt-3">
+					<div class="container-fluid">
+						{% include "comp/welcome.twig" %}
+						{% include "comp/summary.twig" %}
+						<div class="row clearfix row-deck">
+							<div class="col-xl-12 col-lg-12">
+								{% include "comp/graph.twig" %}
+							</div>
+							<div class="col-xl-8 col-lg-12">
+								{% include "comp/graph2.twig" %}
+							</div>
+							<div class="col-xl-4 col-lg-12">
+								{% include "comp/graph3.twig" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section-body">
+					<div class="container-fluid">
+						<div class="row clearfix row-deck">
+							<div class="col-xl-4 col-lg-12 col-md-12">
+								{% include "comp/history/transaction.twig" %}
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6">
+								{% include "comp/customerSatisfaction.twig" %}
+							</div>
+							<div class="col-xl-4 col-lg-6 col-md-6">
+								{% include "comp/ratings.twig" %}
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col-12 col-sm-12">
+								{% include "comp/projectSummary.twig" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section-body">
+					{% include "comp/footer.twig" %}
+				</div>
+			</div>
+		</div>
+		
+		<script src="/assets/bundles/lib.vendor.bundle.js"></script>
+		<script src="/assets/bundles/apexcharts.bundle.js"></script>
+		<script src="/assets/bundles/counterup.bundle.js"></script>
+		<script src="/assets/bundles/knobjs.bundle.js"></script>
+		<script src="/assets/bundles/c3.bundle.js"></script>
+		<script src="/assets/js/core.js"></script>
+		<script src="/assets/js/page/project-index.js"></script>
+
+	</body>
+</html>

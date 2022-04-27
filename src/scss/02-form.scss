@@ -1,0 +1,23 @@
+[type=checkbox]{
+    display:none;
+}
+[type=checkbox]:checked + label:before{
+    content:'';
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background:#000;
+    border:1px solid #ccc;
+    border-radius:2px;
+    margin-right:5px;
+}
+[type=checkbox]+ label:before{
+    content:'';
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background:#fff;
+    border:1px solid #000;
+    border-radius:2px;
+    margin-right:5px;
+}
