@@ -21,3 +21,15 @@
     border-radius:2px;
     margin-right:5px;
 }
+[type=checkbox]+label+.vendor{
+    display:none;
+}
+[type=checkbox]:checked+label+.vendor{
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:10px;
+}
+#Company_Settings{
+    display:flex;
+    gap:20px;
+}

@@ -1,6 +1,6 @@
 {% import _self as form %}
 {% macro tab(param) %}
-	<div class="tab-pane" id="{{param.id}}">
+	<div class="tab-pane {{param.active}}" id="{{param.id}}">
 		<div class="card">
 			<div class="card-header">
 				<h3 class="card-title">{{param.title}}</h3>

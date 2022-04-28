@@ -1,30 +1,240 @@
 {% import "macro/form.twig" as form %}
-<div class="section-body">
-	<div class="container-fluid">
-		<div class="row clearfix">
-			<div class="col-lg-12">
-				<div class="d-lg-flex justify-content-between">
-					<ul class="nav nav-tabs page-header-tab">
-						{% for item in tabs %}
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#{{item.id}}">{{item.title}}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <div class="section-body">
 	<div class="container-fluid">
 		<div class="row clearfix">
 			<div class="col-md-12">
 				<div class="tab-content">
-					{% for tabinfo in tabs %}
-						{{ form.tab(tabinfo) }}
-					{% endfor %}
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Contact Person 1</h3>
+						</div>
+						<div class="card-body">
+							<div class="row clearfix">
+								<div class="col-md-1">
+									<div class="form-group">
+										<label for="contact_name_sal">Salutation</label>
+										<select name="contact_name_sal" class="form-control">
+											<option value="Mr">Mr</option>
+											<option value="Mrs">Mrs</option>
+											<option value="Ms">Ms</option>
+											<option value="Dr">Dr</option>
+										</select>
+
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_fname">First Name</label>
+										<input type="text" class="form-control" value="" id="contact_fname" name="contact_fname">
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="contact_mname">Middle Name</label>
+										<input type="text" class="form-control" value="" id="contact_mname" name="contact_mname">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_lname">Last Name</label>
+										<input type="text" class="form-control" value="" id="contact_lname" name="contact_lname">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="contact_designation">Designation</label>
+										<input type="text" class="form-control" value="" id="contact_designation" name="contact_designation">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="contact_jobrole">Job Role</label>
+										<input type="text" class="form-control" value="" id="contact_jobrole" name="contact_jobrole">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="contact_email">Email</label>
+										<input type="email" class="form-control" value="" id="contact_email" name="contact_email">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="contact_phone">Phone</label>
+										<input type="tel" class="form-control" value="" id="contact_phone" name="contact_phone">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="contact_im_type">IM</label>
+										<select name="contact_im_type" class="form-control">
+											<option value="Skype">Skype</option>
+											<option value="WhatsApp">WhatsApp</option>
+											<option value="Viber">Viber</option>
+											<option value="Facebook">Facebook</option>
+											<option value="Twitter">Twitter</option>
+											<option value="Instagram">Instagram</option>
+											<option value="Linkedin">Linkedin</option>
+											<option value="Hangouts">Hangouts</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-8">
+									<div class="form-group">
+										<label for="contact_im_id">IM ID</label>
+										<input type="text" class="form-control" value="" id="contact_im_id" name="contact_im_id">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane active" id="Company_Settings">
+
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Company</h3>
+							</div>
+							<div class="card-body">
+								<div class="row clearfix">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Company Name</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Legal Business Name</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="logo">Company Logo</label>
+											<input type="file" class="form-control" value="" id="logo" name="logo">
+										</div>
+									</div>
+
+									<div class="col-md-8">
+										<div class="form-group">
+											<label for="website">Company Website</label>
+											<input type="url" class="form-control" value="" id="website" name="website">
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="checkbox" class="form-control" value="client" id="client" name="client">
+											<label for="client">Client</label>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" class="form-control" value="vendor" id="vendor" name="vendor">
+											<label for="vendor">Vendor</label>
+
+											<div class="vendor">
+												<div class="form-group">
+													<label for="vendor_name">URL Complete</label>
+													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+												</div>
+												<div class="form-group">
+													<label for="vendor_website">URL Terminate</label>
+													<input type="url" class="form-control" value="" id="vendor_website" name="vendor_website">
+												</div>
+												<div class="form-group">
+													<label for="vendor_name">URL Overquota</label>
+													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+												</div>
+
+												<div class="form-group">
+													<label for="vendor_name">URL Security</label>
+													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+												</div>
+												<div class="form-group">
+													<label for="vendor_name">URL Postback</label>
+													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-12 m-t-20 text-right">
+										<button type="button" class="btn btn-primary">SAVE</button>
+										<button type="button" class="btn btn-default">CANCEL</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Address</h3>
+							</div>
+							<div class="card-body">
+								<div class="row clearfix">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Tag</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Address-Line 1 (Floor/Building Number/Name)</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Address-Line 2 (Street/Locality/Area Name)</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="name">Country</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="name">State</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label for="name">City</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="name">Zip/Postal code</label>
+											<input type="text" class="form-control" value="" id="name" name="name">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="tab-pane" id="Contact_Details"></div>
+
 				</div>
 			</div>
 		</div>

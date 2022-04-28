@@ -37,7 +37,7 @@ router
     });
 router.use("/autologin", async (req,res)=>{
     user = await User.find({ user: "opt" });
-    req.session.user = user[0];
+    req.session.user = user[0]; 
     data=req.data || {};
     
     // res.json(data);
@@ -45,10 +45,10 @@ router.use("/autologin", async (req,res)=>{
 })
 router.get("/adduser", (req, res) => {
     new User({
-        user: "opt",
+        user: "opt", 
         pass: md5("1q2w3e$R"),
         name: {
-            first: "Om",
+            first: "Om", 
             last: "Tiwari"
         },
         email: "om.tiwari@frequentresearch.com",

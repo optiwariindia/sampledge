@@ -22,6 +22,7 @@ router.get("/add", (req, res) => {
         {
             id: "Company_Settings",
             title: "Company",
+            active:"active",
             form: [
                 {
                     name: "name",
@@ -41,28 +42,28 @@ router.get("/add", (req, res) => {
                     name: "logo",
                     type: "file",
                     label: "Company Logo",
-                    class:"col-md-12",
+                    class:"col-md-4",
                     value: ""
                 },
                 {
                     name: "website",
                     type: "url",
                     label: "Company Website",
-                    class:"col-md-12",
+                    class:"col-md-8",
                     value: ""
                 },
                 {
                     name: "vendor",
                     type: "checkbox",
                     label: "Vendor",
-                    class:"col-md-12",
+                    class:"col-md-4",
                     value: "vendor"
                 },
                 {
                     name: "client",
                     type: "checkbox",
                     label: "Client",
-                    class:"col-md-12",
+                    class:"col-md-4",
                     value: "client"
                 }
             ]
