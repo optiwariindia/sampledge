@@ -39,7 +39,8 @@ router.use("/autologin", async (req,res)=>{
     user = await User.find({ user: "opt" });
     req.session.user = user[0]; 
     data=req.data || {};
-    
+    res.redirect("/project/create")
+    return;
     // res.json(data);
     res.render("index.twig", data);
 })

@@ -4,7 +4,7 @@
 	<div class="container-fluid">
 		<div class="row clearfix">
 			<div class="col-md-12">
-				<div class="tab-content">
+				<form method="post" class="tab-content">
 					<div class="card">
 						<div class="card-header">
 							<h3 class="card-title">Contact Person 1</h3>
@@ -47,7 +47,7 @@
 
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="contact_designation">Designation</label>
+										<label for="contact_department">Department</label>
 										<input type="text" class="form-control" value="" id="contact_designation" name="contact_designation">
 									</div>
 								</div>
@@ -72,29 +72,27 @@
 										<input type="tel" class="form-control" value="" id="contact_phone" name="contact_phone">
 									</div>
 								</div>
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="contact_im_type">IM</label>
-										<select name="contact_im_type" class="form-control">
-											<option value="Skype">Skype</option>
-											<option value="WhatsApp">WhatsApp</option>
-											<option value="Viber">Viber</option>
-											<option value="Facebook">Facebook</option>
-											<option value="Twitter">Twitter</option>
-											<option value="Instagram">Instagram</option>
-											<option value="Linkedin">Linkedin</option>
-											<option value="Hangouts">Hangouts</option>
-										</select>
+								<div class="col-md-12">
+									<label>Instant messaging</label>
+									<div class="ims">
+										{% for im in ["whatsapp","skype","telegram","instagram","aol","qq","wechat"] %}
+											<label for="im_{{im}}">
+												<img src="/img/im/{{im}}.png" alt="">
+											</label>
+										{% endfor %}
 									</div>
 								</div>
-
-								<div class="col-md-8">
-									<div class="form-group">
-										<label for="contact_im_id">IM ID</label>
-										<input type="text" class="form-control" value="" id="contact_im_id" name="contact_im_id">
+								{% for im in ["whatsapp","skype","telegram","instagram","aol","qq","wechat"] %}
+									<div class="col-md-4">
+										<div class="form-group">
+											<input type="checkbox" id="im_{{im}}">
+											<div class="iminput">
+												<img src="/img/im/{{im}}.png">
+												<input type="text" class="form-control" value="" name="im_{{im}}">
+											</div>
+										</div>
 									</div>
-								</div>
+								{% endfor %}
 							</div>
 						</div>
 					</div>
@@ -116,7 +114,7 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label for="name">Legal Business Name</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<input type="text" class="form-control" value="" id="legal" name="legal">
 										</div>
 									</div>
 
@@ -130,7 +128,7 @@
 									<div class="col-md-8">
 										<div class="form-group">
 											<label for="website">Company Website</label>
-											<input type="url" class="form-control" value="" id="website" name="website">
+											<input type="url" class="form-control" value="https://" id="website" name="website">
 										</div>
 									</div>
 
@@ -145,33 +143,28 @@
 
 											<div class="vendor">
 												<div class="form-group">
-													<label for="vendor_name">URL Complete</label>
-													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+													<label for="url_complete">URL Complete</label>
+													<input type="url" class="form-control" value="http://" id="url_complete" name="url_complete">
 												</div>
 												<div class="form-group">
-													<label for="vendor_website">URL Terminate</label>
-													<input type="url" class="form-control" value="" id="vendor_website" name="vendor_website">
+													<label for="url_terminate">URL Terminate</label>
+													<input type="url" class="form-control" value="http://" id="url_terminate" name="url_terminate">
 												</div>
 												<div class="form-group">
-													<label for="vendor_name">URL Overquota</label>
-													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+													<label for="url_overquota">URL Overquota</label>
+													<input type="url" class="form-control" value="http://" id="url_overquota" name="url_overquota">
 												</div>
 
 												<div class="form-group">
-													<label for="vendor_name">URL Security</label>
-													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+													<label for="url_security">URL Security</label>
+													<input type="url" class="form-control" value="http://" id="url_security" name="url_security">
 												</div>
 												<div class="form-group">
-													<label for="vendor_name">URL Postback</label>
-													<input type="text" class="form-control" value="" id="vendor_name" name="vendor_name">
+													<label for="url_postback">URL Postback</label>
+													<input type="url" class="form-control" value="http://" id="url_postback" name="url_postback">
 												</div>
 											</div>
 										</div>
-									</div>
-
-									<div class="col-sm-12 m-t-20 text-right">
-										<button type="button" class="btn btn-primary">SAVE</button>
-										<button type="button" class="btn btn-default">CANCEL</button>
 									</div>
 								</div>
 							</div>
@@ -184,58 +177,57 @@
 								<div class="row clearfix">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label for="name">Tag</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_tag">Tag</label>
+											<input type="text" class="form-control" value="" id="office_tag" name="office_tag">
 										</div>
 									</div>
 
 									<div class="col-md-12">
 										<div class="form-group">
-											<label for="name">Address-Line 1 (Floor/Building Number/Name)</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_al1">Address-Line 1 (Floor/Building Number/Name)</label>
+											<input type="text" class="form-control" value="" id="office_al1" name="office_al1">
 										</div>
 									</div>
 
 									<div class="col-md-12">
 										<div class="form-group">
-											<label for="name">Address-Line 2 (Street/Locality/Area Name)</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_al2">Address-Line 2 (Street/Locality/Area Name)</label>
+											<input type="text" class="form-control" value="" id="office_al2" name="office_al2">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="name">Country</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_country">Country</label>
+											<input type="text" class="form-control" value="" id="office_country" name="office_country">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="name">State</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_state">State</label>
+											<input type="text" class="form-control" value="" id="office_state" name="state">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="name">City</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_city">City</label>
+											<input type="text" class="form-control" value="" id="office_city" name="office_city">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<label for="name">Zip/Postal code</label>
-											<input type="text" class="form-control" value="" id="name" name="name">
+											<label for="office_zipcode">Zip/Postal code</label>
+											<input type="text" class="form-control" value="" id="office_zipcode" name="office_zipcode">
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
-
-
 					</div>
-
-					<div class="tab-pane" id="Contact_Details"></div>
-
-				</div>
+					<div class="col-md-12 flex-end">
+						<button class="btn btn-primary">Submit</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -1,40 +1,56 @@
 const schema = require("mongoose").Schema;
 module.exports = new schema({
-    name: String,
-    legalName: String,
     type:{
-        vendor:Boolean,
-        client:Boolean
-    },
-    address:[{
+    vendor:Boolean,
+    client:Boolean
+}, 
+contact:[
+    {
+        name:{
+            salutation:String,
+            first:String,
+            middle:String,
+            last:String
+        },
+        email:String,
+        phone:String,
+        jobrole:String,
+        department:String,
+        im:{
+            whatsapp:String,
+            skype:String,
+            telegram:String,
+            instagram:String,
+            aol:String,
+            qq:String,
+            wechat:String
+        }
+    }
+],
+name:String,
+legalName:String,
+logo:String,
+website:String,
+vendor_urls:{
+    complete:String,
+    overquota:String,
+    terminate:String,
+    security:String,
+    postback:String
+},
+office:[
+    {
         tag:String,
-        street:String,
+        al1:String,
+        al2:String,
         city:String,
         state:String,
         country:String,
         zip:String
-    }],
-    contact:[
-        {
-            name:{
-                salutation:Enumerator("Mr","Mrs","Ms","Dr"),
-                first:String,
-                middle:String,
-                last:String
-            },
-            email:String,
-            phone:String,
-            jobrole:String,
-            department:String,
-            office:String,
-            im:[
-                {
-                    provider:String,
-                    id:String
-                }
-            ],
-            active:Boolean
-        }
-    ],
-    active:Boolean
-}) 
+    }
+]},
+{
+    timestamps:true,
+    collection:"companies"
+}
+) 

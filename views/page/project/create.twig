@@ -1,0 +1,188 @@
+{% import "macro/form.twig" as form %}
+<div class="section-body">
+	<div class="container-fluid">
+		<div class="row clearfix">
+			<div class="col-md-12">
+				<form method="post" class="tab-content">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Project information</h3>
+						</div>
+						<div class="card-body">
+							<div class="row clearfix">
+								{{form.field({
+									class: 'col-md-6',
+									name: 'name',
+									label: 'Project name',
+									type: 'text',
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'name',
+									label: 'Workorder Number',
+									type: 'text',
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Type',
+									type: 'select',
+									options:[
+										"Ad-hoc",
+										"Omnibus",
+										"Recontact"
+									]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Sample Options',
+									type: 'select',
+									options:[
+										"Consumer","B2B","Healthcare Professional","Healthcare Consumer"
+									]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Client',
+									type: 'select',
+									options:["Client 1","Client 2","Client 3"]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Client Contact Person',
+									type: 'select',
+									options:["Person 1","Person 2","Person 3"]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Sales Person',
+									type: 'select',
+									options:["Sales Person 1","Sales Person 2","Sales Person 3"]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Project Manager',
+									type: 'select',
+									options:["Project Manager 1","Project Manager 2","Project Manager 3"]
+								})}}
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Specifications</h3>
+						</div>
+						<div class="card-body">
+							<div class="row clearfix">
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Country',
+									type: 'autocomplete',
+									options:["Country 1","Country 2","Country 3"]
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Language',
+									type: 'autocomplete',
+									options:["English","French","Spanish"]
+								})}}
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Completes (Required Samples)',
+									type: 'number'
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Cost Per Interview (CPI)',
+									type: 'currency'
+								})}}
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Length of Interview(LOI) in minutes',
+									type: 'number'
+								})}}
+
+								{{form.field({
+									class: 'col-md-6',
+									name: 'type',
+									label: 'Incidence Rate (IR)',
+									type: 'percent'
+								})}}
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Links</h3>
+						</div>
+						<div class="card-body">
+							<div class="row clearfix">
+
+								{{form.field({
+								class: 'col-md-6',
+								name: 'type',
+								label: 'Live Link',
+								type: 'url'
+							})}}
+
+								{{form.field({
+								class: 'col-md-6',
+								name: 'type',
+								label: 'Test Link',
+								type: 'url'
+							})}}
+
+								{{form.field({
+								class: 'col-md-12',
+								name: 'type',
+								label: 'description',
+								type: 'editor'
+							})}}
+								{{form.field({
+								class: 'col-md-6',
+								name: 'type',
+								label: 'Status',
+								type: 'select',
+								options:[
+									"Test",
+									"Live",
+									"Hold",
+									"Closed",
+									"Invoiced"
+								]
+							})}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-12 flex-end">
+						<button class="btn btn-danger">Cancel</button>
+						<button type="submit" class="btn btn-secondary">Duplicate</button>
+						<button class="btn btn-primary">Submit</button>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

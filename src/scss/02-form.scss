@@ -33,3 +33,43 @@
     display:flex;
     gap:20px;
 }
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+form{
+    border-radius:10px;
+    margin:10px;
+    padding:5px;
+    border:1px dotted #ccc;
+    .card-header{
+        background:#ccc;
+    }
+    .ims{
+        display:flex;
+        gap:10px;
+        label{
+            border-radius:5px;
+            border:1px solid #ccc;
+            padding:5px;
+        }
+        img{
+            width:25px;
+        }
+    }
+}
+[type=checkbox]+.iminput{
+    display:none;
+}
+[type=checkbox]:checked +.iminput{
+    display:grid;
+}
+.iminput{
+    // display:grid;
+    grid-template-columns: 30px 1fr;
+    gap:10px;
+    img{
+        width:30px;
+        height:30px;
+    }
+}
